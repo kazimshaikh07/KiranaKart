@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KiranaExpress - Social Media Launch Coming Soon</title>
+    <link rel="stylesheet" href="{% static 'css/social.css' %}">
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .floating-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .shape {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .shape:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .shape:nth-child(2) {
+        width: 120px;
+        height: 120px;
+        top: 60%;
+        right: 15%;
+        animation-delay: 2s;
+      }
+
+      .shape:nth-child(3) {
+        width: 60px;
+        height: 60px;
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
+      .main-content {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 60px 40px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: slideUp 1s ease-out 0.5s forwards;
+      }
+
+      @keyframes slideUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .logo {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+
+      .announcement {
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .announcement::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transform: rotate(45deg);
+        animation: shine 3s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        }
+        50% {
+          transform: translateX(100%) translateY(100%) rotate(45deg);
+        }
+        100% {
+          transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        }
+      }
+
+      .announcement h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .announcement p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+      }
+
+      .social-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .social-card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .social-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        border-color: #667eea;
+      }
+
+      .social-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .social-card h3 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      .social-card p {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .countdown {
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px 0;
+      }
+
+      .countdown h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .time-unit {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 15px 20px;
+        border-radius: 10px;
+        text-align: center;
+        min-width: 80px;
+      }
+
+      .time-number {
+        font-size: 2rem;
+        font-weight: bold;
+        display: block;
+      }
+
+      .time-label {
+        font-size: 0.8rem;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .notify-btn {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 18px 40px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .notify-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      .notify-btn:active {
+        transform: translateY(0);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+      }
+
+      .feature {
+        text-align: left;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        border-left: 4px solid #667eea;
+      }
+
+      .feature h4 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .feature p {
+        color: #666;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 15px;
+        }
+
+        .main-content {
+          padding: 40px 25px;
+        }
+
+        .logo {
+          font-size: 2.5rem;
+        }
+
+        .announcement h2 {
+          font-size: 1.8rem;
+        }
+
+        .countdown-timer {
+          gap: 10px;
+        }
+
+        .time-unit {
+          min-width: 60px;
+          padding: 10px 15px;
+        }
+
+        .time-number {
+          font-size: 1.5rem;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+
+      <div class="main-content">
+        <h1 class="logo">KiranaExpress</h1>
+        <p class="tagline">
+          Your Neighborhood Grocery Store, Now Going Digital
+        </p>
+
+        <div class="announcement">
+          <h2>🚀 Big News Coming Soon!</h2>
+          <p>
+            We're excited to announce that KiranaExpress will be launching our
+            official social media presence! Connect with us for daily deals,
+            fresh arrivals, cooking tips, and community updates.
+          </p>
+        </div>
+
+        <!-- <div class="social-preview">
+                <div class="social-card">
+                    <span class="social-icon">📘</span>
+                    <h3>Facebook</h3>
+                    <p>Join our community for exclusive deals, product updates, and local grocery tips</p>
+                </div>
+                <div class="social-card">
+                    <span class="social-icon">📸</span>
+                    <h3>Instagram</h3>
+                    <p>Fresh produce photos, recipe inspiration, and behind-the-scenes content</p>
+                </div>
+                <div class="social-card">
+                    <span class="social-icon">🐦</span>
+                    <h3>Twitter</h3>
+                    <p>Quick updates, customer service, and real-time inventory notifications</p>
+                </div>
+            </div> -->
+
+        <!-- <div class="countdown">
+                <h3>⏰ Launch Countdown</h3>
+                <div class="countdown-timer">
+                    <div class="time-unit">
+                        <span class="time-number" id="days">15</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="hours">08</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="minutes">42</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="seconds">30</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+            </div> -->
+
+        <!-- <button class="notify-btn" onclick="notifyMe()">🔔 Notify Me When We Launch</button> -->
+
+        <div class="features">
+          <div class="feature">
+            <h4>🛒 Exclusive Deals</h4>
+            <p>
+              Be the first to know about flash sales, seasonal discounts, and
+              member-only offers
+            </p>
+          </div>
+          <div class="feature">
+            <h4>🥬 Fresh Updates</h4>
+            <p>
+              Daily updates on fresh produce arrivals, organic selections, and
+              local farmer partnerships
+            </p>
+          </div>
+          <div class="feature">
+            <h4>👨‍🍳 Recipe Ideas</h4>
+            <p>
+              Weekly recipe suggestions using ingredients available in our
+              store, with cooking tips
+            </p>
+          </div>
+          <div class="feature">
+            <h4>📞 Quick Support</h4>
+            <p>
+              Fast customer service responses and real-time help with your
+              grocery needs
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Countdown Timer
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const launchDate = new Date(
+          now +
+            15 * 24 * 60 * 60 * 1000 +
+            8 * 60 * 60 * 1000 +
+            42 * 60 * 1000 +
+            30 * 1000
+        ).getTime();
+        const distance = launchDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+
+        if (distance < 0) {
+          document.querySelector(".countdown").innerHTML =
+            "<h3>🎉 We're Live! Check out our social media accounts!</h3>";
+        }
+      }
+
+      // Update countdown every second
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Notification function
+      function notifyMe() {
+        const button = document.querySelector(".notify-btn");
+        const originalText = button.innerHTML;
+
+        button.innerHTML = "✅ You'll be notified!";
+        button.style.background = "linear-gradient(135deg, #2ecc71, #27ae60)";
+
+        // Simulate storing email (in real app, this would connect to a backend)
+        setTimeout(() => {
+          button.innerHTML = "🎉 Thanks for subscribing!";
+        }, 1500);
+
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.style.background = "linear-gradient(135deg, #667eea, #764ba2)";
+        }, 4000);
+      }
+
+      // Add hover effects to social cards
+      document.querySelectorAll(".social-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-10px) scale(1.02)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0) scale(1)";
+        });
+      });
+
+      // Add click animation to social cards
+      document.querySelectorAll(".social-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          this.style.transform = "translateY(-5px) scale(0.98)";
+          setTimeout(() => {
+            this.style.transform = "translateY(-10px) scale(1.02)";
+          }, 150);
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9761a404c58c853d',t:'MTc1NjM2MTM3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

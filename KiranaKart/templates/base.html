@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KiranaKart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="{% static 'js/main.js' %}" defer></script>
+
+    <!-- Bootstrap CSS (put this inside <head>) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Bundle JS (with Popper) (put before </body>) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- HEADER SECTION -->
+    <header class="header bg-light shadow-sm py-3">
+      <div
+        class="container header-container d-flex justify-content-between align-items-center py-2"
+      >
+        <!-- Logo -->
+        <div class="logo d-flex align-items-center">
+          <img
+            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3A1MG9mOGsyeXZxODQyeDI0ZWFxZGliamJvMDV2cHo5aHp6enE2OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Phna8ImVFWEqxPUIfk/giphy.gif"
+            alt="KiranaExpress Logo"
+            class="img-fluid"
+            style="height: 40px; width: auto; margin-right: 10px"
+          />
+          <a href="#"><span class="fw-bold fs-5">KiranaExpress</span></a>
+          
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-items d-flex">
+          <button>
+            <a href="#">
+              <div class="nav-item d-flex flex-column align-items-center mx-3">
+                <span>🔍</span>
+                <span>Search</span>
+              </div>
+            </a>
+          </button>
+
+          <button>
+            <a href="{% url 'help' %}">
+              <div class="nav-item d-flex flex-column align-items-center mx-3">
+                <span>❓</span>
+                <span>Help</span>
+              </div>
+            </a>
+          </button>
+
+          <button>
+            <a href="{% url 'signin' %}">
+              <div class="nav-item d-flex flex-column align-items-center mx-3">
+                <span>👤</span>
+                <span>Sign In</span>
+              </div>
+            </a>
+          </button>
+          
+
+          <!-- Cart Button -->
+          <div
+            class="nav-item cart-btn d-flex flex-column align-items-center mx-3 position-relative"
+            onclick="toggleCart()"
+          >
+            <img
+              src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHF4am5idzZ4OXE4anVmdnBiZzE4ZGc5bzkwNHZ1b25uNGZ1MDhneiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jtECu4KjK3cqiAUMyR/giphy.gif"
+              alt="Cart"
+              class="img-fluid"
+              style="height: 30px; width: auto;" 
+            />
+            <span>Cart</span>
+            <span
+              class="cart-count badge bg-danger position-absolute top-0 start-100 translate-middle"
+              id="cartCount">0</span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Fresh Groceries Delivered</h1>
+        <p>
+          Order from your favorite local kirana store and get fresh groceries
+          delivered to your doorstep
+        </p>
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for groceries, fruits, vegetables..."
+            id="heroSearch"
+          />
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="categories-section">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+          <div class="category-card active" onclick="filterCategory('all')">
+            <span class="category-icon">🛒</span>
+            <div class="category-name">All Items</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('vegetables')">
+            <span class="category-icon">🥬</span>
+            <div class="category-name">Vegetables</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('fruits')">
+            <span class="category-icon">🍎</span>
+            <div class="category-name">Fruits</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('dairy')">
+            <span class="category-icon">🥛</span>
+            <div class="category-name">Dairy</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('poultry')">
+            <span class="category-icon">🥚</span>
+            <div class="category-name">Poultry</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('grains')">
+            <span class="category-icon">🌾</span>
+            <div class="category-name">Grains</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('pulses')">
+            <span class="category-icon">🫘</span>
+            <div class="category-name">Pulses</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('snacks')">
+            <span class="category-icon">🍪</span>
+            <div class="category-name">Snacks</div>
+          </div>
+          <div class="category-card" onclick="filterCategory('beverages')">
+            <span class="category-icon">🥤</span>
+            <div class="category-name">Beverages</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section">
+      <div class="container">
+        <div class="products-header">
+          <h2 class="section-title">Fresh Products</h2>
+          <!-- <div class="filter-tabs">
+                    <div class="filter-tab active">Popular</div>
+                    <div class="filter-tab">Rating 4.0+</div>
+                    <div class="filter-tab">Fast Delivery</div>
+                    <div class="filter-tab">Pure Veg</div>
+                </div> -->
+        </div>
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">🛒 KiranaExpress</div>
+            <p class="footer-description">
+              Fresh groceries delivered to your doorstep. Order from your
+              favorite local kirana store and enjoy the convenience of home
+              delivery.
+            </p>
+            <div class="social-links">
+              <!-- <a href="{% url 'social' %}" class="social-link"><i class="fab fa-envelope"></i></a> -->
+              <a href="{% url 'social' %}" class="social-link"><i class="fab fa-facebook"></i></a>
+              <a href="{% url 'social' %}" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="{% url 'social' %}" class="social-link"><i class="fab fa-x-twitter"></i></a>
+              <a href="{% url 'social' %}" class="social-link"><i class="fab fa-linkedin"></i></a>
+              <a href="{% url 'social' %}" class="social-link"><i class="fab fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'career' %}">Careers</a></li>
+              <li><a href="{% url 'team' %}">Team</a></li>
+              <li><a href="{% url 'one' %}">KiranaExpress One</a></li>
+              <li><a href="{% url 'social' %}">KiranaExpress Instamart</a></li>
+              <li><a href="{% url 'genie' %}">KiranaExpress Genie</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Contact Us</h4>
+            <ul class="footer-links">
+              <li><a href="#">Help & Support</a></li>
+              <li><a href="#">Partner with us</a></li>
+              <li><a href="#">Ride with us</a></li>
+            </ul>
+            <h4 class="footer-title" style="margin-top: 30px">Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Investor Relations</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">We deliver to:</h4>
+            <ul class="footer-links cities-list">
+              <li><a href="#">Bangalore</a></li>
+              <li><a href="#">Gurgaon</a></li>
+              <li><a href="#">Hyderabad</a></li>
+              <li><a href="#">Delhi</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Pune</a></li>
+              <li><a href="#">Kolkata</a></li>
+              <li><a href="#">Chennai</a></li>
+              <li><a href="#">Ahmedabad</a></li>
+              <li><a href="#">Chandigarh</a></li>
+              <li><a href="#">Jaipur</a></li>
+              <li><a href="#">Kochi</a></li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </div>
+      <!-- <div class="footer-bottom">
+          <div class="app-download">
+            <span class="download-text"
+              >For better experience, download the KiranaExpress app now</span
+            >
+            <div class="app-buttons">
+              <a href="#" class="app-button">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iNSIgZmlsbD0iIzAwMCIvPgo8dGV4dCB4PSI2MCIgeT0iMjUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Hb29nbGUgUGxheTwvdGV4dD4KPHN2Zz4K"
+                  alt="Google Play"
+                />
+              </a>
+              <a href="#" class="app-button">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iNSIgZmlsbD0iIzAwMCIvPgo8dGV4dCB4PSI2MCIgeT0iMjUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BcHAgU3RvcmU8L3RleHQ+Cjwvc3ZnPgo="
+                  alt="App Store"
+                />
+              </a>
+            </div>
+          </div>
+      </div> -->
+
+        <div class="footer-copyright">
+          <p>
+            &copy; <span id="copyrightYear"></span> KiranaExpress Limited. All
+            rights reserved.
+          </p>
+        </div>
+    </footer>
+
+    <!-- CART SIDEBAR-->
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <div class="cart-title">Your Cart</div>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be displayed here -->
+      </div>
+      <div class="cart-total">
+        <div class="total-row">
+          <span>Subtotal:</span>
+          <span id="subtotal">₹0</span>
+        </div>
+        <div class="total-row">
+          <span>Delivery Fee:</span>
+          <span>₹25</span>
+        </div>
+        <div class="total-row">
+          <span class="total-amount">Total:</span>
+          <span class="total-amount" id="totalAmount">₹25</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

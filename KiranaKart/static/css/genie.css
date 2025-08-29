@@ -1,0 +1,16 @@
+body {
+  background: #fcf0ff;
+  font-family: "Trebuchet MS";
+  margin: 0;
+}
+.genie {
+  padding: 50px;
+  text-align: center;
+}
+.genie h1 {
+  color: #a020f0;
+}
+.genie p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}

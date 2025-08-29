@@ -1,0 +1,17 @@
+body {
+  background: #f0fff0;
+  font-family: Georgia;
+  margin: 0;
+}
+.one {
+  text-align: center;
+  padding: 60px;
+}
+.one h1 {
+  color: #2e8b57;
+}
+.one p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: auto;
+}
