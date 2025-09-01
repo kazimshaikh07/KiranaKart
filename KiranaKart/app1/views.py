@@ -59,16 +59,22 @@ def signup(request):
 
 def signin(request):
     if request.method == "POST":
-        username = request.POST['name']
+        email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/')  # redirect to home page
-        else:
-            messages.error(request, "Invalid username or password.")
-            return redirect('signin')
+
+        try:
+            user_obj = User.objects.get(email=email)
+            user = authenticate(request, username=user_obj.username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('base')  # go to homepage
+            else:
+                messages.error(request, "Invalid email or password.")
+        except User.DoesNotExist:
+            messages.error(request, "Invalid email or password.")
+
     return render(request, "login.html")
+
 
 def logout_view(request):
     logout(request)
