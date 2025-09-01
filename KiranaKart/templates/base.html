@@ -333,5 +333,8 @@
           {% endfor %}
       </script>
     {% endif %}
+    <script>
+      const isLoggedIn = {{ request.user.is_authenticated|yesno:"true,false" }};
+    </script>
   </body>
 </html>

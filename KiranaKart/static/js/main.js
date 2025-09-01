@@ -1,4 +1,4 @@
-// Sample product data 
+// Sample product data
 // 🍚
 // 🌾
 // 🥣
@@ -21,7 +21,9 @@
 // 🥜
 
 const img = (text) =>
-  `https://dummyimage.com/256x256/eeeeee/111111.png&text=${encodeURIComponent(text)}`;
+  `https://dummyimage.com/256x256/eeeeee/111111.png&text=${encodeURIComponent(
+    text
+  )}`;
 
 const products = [
   // 🌾 Grain-first (brand variations + mixed ratings)
@@ -750,7 +752,7 @@ const products = [
     badge: "Seasonal",
   },
 
-  // 🫘 Pulses 
+  // 🫘 Pulses
   {
     id: 65,
     name: "Toor Dal 1kg",
@@ -827,7 +829,9 @@ function createProductCard(product) {
 
   card.innerHTML = `
     <div class="product-image">
-        <img src="${product.icon}" alt="${product.name}" style="width:200px;height:180px;object-fit:contain;">
+        <img src="${product.icon}" alt="${
+    product.name
+  }" style="width:200px;height:180px;object-fit:contain;">
         <div class="product-badge">${product.badge}</div>
     </div>
     <div class="product-info">
@@ -864,27 +868,23 @@ function createProductCard(product) {
 }
 
 function addToCart(productId) {
-  // Check login status
-  let isLoggedIn = localStorage.getItem("isLoggedIn");
-
-  if (isLoggedIn !== "true") {
+  if (!isLoggedIn) {
     alert("⚠️ Please login first to add items to your cart!");
-    window.location.href = "/signin"; // Django login page
+    window.location.href = "/signin/";  // redirect to your login URL
     return;
   }
 
   const product = products.find((p) => p.id === productId);
-  const existingItem = cart.find((item) => item.id === productId);
+  const cartItem = cart.find((item) => item.id === productId);
 
-  if (existingItem) {
-    existingItem.quantity++;
+  if (cartItem) {
+    cartItem.quantity += 1;
   } else {
     cart.push({ ...product, quantity: 1 });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  displayProducts();
-  updateCartUI();
+  displayProducts(); // refresh UI
+  alert(`🛒 ${product.name} added to your cart!`);
 }
 
 function increaseQuantity(productId) {
@@ -953,33 +953,17 @@ function updateCartDisplay() {
 }
 
 /* CHECKOUT BUTTON HANDLER */
-document.addEventListener("DOMContentLoaded", function () {
-  const checkoutBtn = document.querySelector(".checkout-btn");
+document.querySelector(".checkout-btn").addEventListener("click", function () {
+  if (!isLoggedIn) {
+    alert("⚠️ Please login first to place an order!");
+    window.location.href = "/signin/";
+  } else {
+    let subtotal = 500; // example value, replace with your calculation
+    let total = subtotal + 25;
 
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener("click", function () {
-      let isLoggedIn = localStorage.getItem("isLoggedIn");
-
-      if (isLoggedIn === "true") {
-        // Calculate subtotal
-        let subtotal = calculateSubtotal();
-        let delivery = 25;
-        let total = subtotal + delivery;
-
-        alert(
-          `🎉 Order Placed Successfully!\n\nSubtotal: ₹${subtotal}\nDelivery: ₹${delivery}\nTotal: ₹${total}\n\nEstimated delivery: 20-30 minutes\n\nThis is a demo - in your Django app, this would process the actual payment and order!`
-        );
-
-        // Empty cart
-        cart = [];
-        localStorage.removeItem("cart");
-        displayProducts();
-        updateCartUI();
-      } else {
-        alert("⚠️ Please login first to place an order!");
-        window.location.href = "/signin"; // Django login page
-      }
-    });
+    alert(
+      `🎉 Order Placed Successfully!\n\nSubtotal: ₹${subtotal}\nDelivery: ₹25\nTotal: ₹${total}\n\nEstimated delivery: 20-30 minutes\n\nThis is a demo - in your Django app, this would process the actual payment and order!`
+    );
   }
 });
 
@@ -987,7 +971,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function calculateSubtotal() {
   return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 }
-
 
 function filterCategory(category) {
   currentCategory = category;
@@ -1029,26 +1012,32 @@ function toggleCart() {
 }
 
 function checkout() {
-  if (cart.length === 0) {
-    alert("Your cart is empty! Add some items first.");
+  if (!isLoggedIn) {
+    alert("⚠️ Please login first to place an order!");
+    window.location.href = "/signin/"; // Redirect to Django login page
     return;
   }
 
-  const subtotal = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  // ✅ User is logged in → proceed with order
+  let subtotal = 0;
+  const cartItems = document.querySelectorAll(".cart-item");
+  cartItems.forEach((item) => {
+    const price = parseInt(item.dataset.price || 0);
+    const qty = parseInt(item.dataset.qty || 1);
+    subtotal += price * qty;
+  });
+
   const total = subtotal + 25;
 
   alert(
     `🎉 Order Placed Successfully!\n\nSubtotal: ₹${subtotal}\nDelivery: ₹25\nTotal: ₹${total}\n\nEstimated delivery: 20-30 minutes\n\nThis is a demo - in your Django app, this would process the actual payment and order!`
   );
 
-  // Clear cart
-  cart = [];
-  updateCartDisplay();
-  displayProducts();
-  toggleCart();
+  // clear the cart after placing order
+  document.getElementById("cartItems").innerHTML = "";
+  document.getElementById("subtotal").innerText = "₹0";
+  document.getElementById("totalAmount").innerText = "₹25";
+  document.getElementById("cartCount").innerText = "0";
 }
 
 // Filter tabs functionality
@@ -1100,4 +1089,4 @@ document.querySelectorAll(".filter-tab").forEach((tab) => {
 })();
 
 // Set copyright year automatically
-      document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+document.getElementById("copyrightYear").textContent = new Date().getFullYear();
