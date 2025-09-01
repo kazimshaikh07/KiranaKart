@@ -66,14 +66,28 @@
             </a>
           </button>
 
-          <button>
-            <a href="{% url 'signin' %}">
-              <div class="nav-item d-flex flex-column align-items-center mx-3">
-                <span>👤</span>
-                <span>Sign In</span>
-              </div>
-            </a>
-          </button>
+          {% if user.is_authenticated %}
+            <!-- Logout Button -->
+            <button>
+              <a href="{% url 'logout' %}">
+                <div class="nav-item d-flex flex-column align-items-center mx-3">
+                  <span>🚪</span>
+                  <span>Logout</span>
+                </div>
+              </a>
+            </button>
+          {% else %}
+            <!-- Sign In Button -->
+            <button>
+              <a href="{% url 'signin' %}">
+                <div class="nav-item d-flex flex-column align-items-center mx-3">
+                  <span>👤</span>
+                  <span>Sign In</span>
+                </div>
+              </a>
+            </button>
+          {% endif %}
+
           
 
           <!-- Cart Button -->

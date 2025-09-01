@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.contrib.auth import logout
+
+
 # Create your views here.
 def home(request):
     return render(request, 'base.html')
@@ -54,9 +57,6 @@ def signup(request):
     # 7️⃣ If request is GET, just load the signup page
     return render(request, 'register.html')
 
-
-
-
 def signin(request):
     if request.method == "POST":
         username = request.POST['name']
@@ -69,6 +69,10 @@ def signin(request):
             messages.error(request, "Invalid username or password.")
             return redirect('signin')
     return render(request, "login.html")
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'base.html') # After logout, go back to home page
 
 
 def help(request):

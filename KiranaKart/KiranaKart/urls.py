@@ -28,7 +28,9 @@ urlpatterns = [
     path('', include('app1.urls')),
     # header section
     # sign
-    
+    path('signin/', include('app1.urls')),
+    path('signup/', include('app1.urls')),
+    path('logout/', include('app1.urls')),
     path('help/', include('app1.urls')),
     
     # social line
