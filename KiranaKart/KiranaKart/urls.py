@@ -1,3 +1,4 @@
+
 """
 URL configuration for KiranaKart project.
 
@@ -16,7 +17,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib import admin
 
 # Customize the admin site titles and headers
 admin.site.site_title = "KIRANAEXPRESS Portal"
@@ -25,21 +25,5 @@ admin.site.index_title = "Welcome to KIRANAEXPRESS Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app1.urls')),
-    # header section
-    # sign
-    path('signin/', include('app1.urls')),
-    path('signup/', include('app1.urls')),
-    path('logout/', include('app1.urls')),
-    path('help/', include('app1.urls')),
-    
-    # social line
-    path('social/', include('app1.urls')),
-    # company section
-    path('about/', include('app1.urls')),
-    path('career/', include('app1.urls')),
-    path('team/', include('app1.urls')),
-    path('one/', include('app1.urls')),
-    # instamart line
-    path('genie/', include('app1.urls')),
+    path('', include('app1.urls')),  # 👈 include app1.urls only once
 ]

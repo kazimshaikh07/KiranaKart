@@ -26,35 +26,35 @@ def signup(request):
         password1 = request.POST.get('password1', '')         # take password1
         password2 = request.POST.get('password2', '')         # take password2
 
-        # 1️⃣ Check if username is empty
+        # Check if username is empty
         if not username:
             messages.error(request, "Username is required!")
             return redirect('signup')
 
-        # 2️⃣ Check if passwords match
+        # Check if passwords match
         if password1 != password2:
             messages.error(request, "Passwords do not match!")
             return redirect('signup')
 
-        # 3️⃣ Check if email already exists
+        # Check if email already exists
         if User.objects.filter(email=email).exists():
             messages.error(request, "User already exists with this email.")
             return redirect('signup')
 
-        # 4️⃣ Check if username already exists
+        # Check if username already exists
         if User.objects.filter(username=username).exists():
             messages.error(request, "Username already taken.")
             return redirect('signup')
 
-        # 5️⃣ Create new user
+        # Create new user
         user = User.objects.create_user(username=username, email=email, password=password1)
         user.save()
 
-        # 6️⃣ Send success message and redirect to login page
+        # Send success message and redirect to login page
         messages.success(request, "Account created successfully! Please login.")
         return redirect('signin')
 
-    # 7️⃣ If request is GET, just load the signup page
+    # If request is GET, just load the signup page
     return render(request, 'register.html')
 
 def signin(request):
@@ -67,6 +67,7 @@ def signin(request):
             user = authenticate(request, username=user_obj.username, password=password)
             if user is not None:
                 login(request, user)
+                messages.success(request, f"Welcome back {user.first_name or user.username}!")
                 return redirect('base')  # go to homepage
             else:
                 messages.error(request, "Invalid email or password.")
@@ -76,9 +77,11 @@ def signin(request):
     return render(request, "login.html")
 
 
-def logout_view(request):
+def signout(request):
     logout(request)
-    return render(request, 'base.html') # After logout, go back to home page
+    messages.success(request, "You have been logged out successfully!")
+    return redirect('signin')
+
 
 
 def help(request):

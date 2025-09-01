@@ -326,5 +326,12 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    {% if messages %}
+      <script>
+          {% for message in messages %}
+              alert("{{ message|escapejs }}");
+          {% endfor %}
+      </script>
+    {% endif %}
   </body>
 </html>
