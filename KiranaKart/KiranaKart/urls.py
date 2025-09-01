@@ -27,7 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app1.urls')),
     # header section
-    path('signin/', include('app1.urls')),
+    # sign
+    
     path('help/', include('app1.urls')),
     
     # social line

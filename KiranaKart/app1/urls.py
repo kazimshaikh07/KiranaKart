@@ -7,8 +7,13 @@ urlpatterns = [
     path('', views.home, name='base'),
     
     # header section
-    path('/signin', views.signin, name='signin'),
+    # sign
+    # signin & signup section
+    path("signin/", views.signin, name="signin"),
+    path("signup/", views.signup, name="signup"),
     path('/help', views.help, name='help'),
+    
+    
     
     # social line
     path('/social', views.social, name='social'),
