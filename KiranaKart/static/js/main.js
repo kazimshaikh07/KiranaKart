@@ -1,467 +1,25 @@
-// Sample product data (similar to Swiggy's restaurant data structure)
-// const products = [
-//   // 🌾 Grain Products (priority)
-//   {
-//     id: 1,
-//     name: "Basmati Rice - India Gate",
-//     category: "grains",
-//     price: 120,
-//     description: "Premium long-grain basmati rice - 1kg pack",
-//     icon: "🍚",
-//     rating: 4.6,
-//     deliveryTime: "20-25 mins",
-//     badge: "Premium",
-//   },
-//   {
-//     id: 2,
-//     name: "Basmati Rice - Fortune",
-//     category: "grains",
-//     price: 110,
-//     description: "High-quality basmati rice - 1kg pack",
-//     icon: "🍚",
-//     rating: 3.8,
-//     deliveryTime: "20-25 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 3,
-//     name: "Brown Rice - Organic Tattva",
-//     category: "grains",
-//     price: 130,
-//     description: "Organic brown rice - 1kg pack",
-//     icon: "🍚",
-//     rating: 4.2,
-//     deliveryTime: "20-25 mins",
-//     badge: "Organic",
-//   },
-//   {
-//     id: 4,
-//     name: "Whole Wheat Flour - Aashirvaad",
-//     category: "grains",
-//     price: 250,
-//     description: "Whole wheat flour - 10kg pack",
-//     icon: "🌾",
-//     rating: 4.5,
-//     deliveryTime: "20-25 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 5,
-//     name: "Whole Wheat Flour - Local Brand",
-//     category: "grains",
-//     price: 220,
-//     description: "Stone-ground wheat flour - 10kg pack",
-//     icon: "🌾",
-//     rating: 3.6,
-//     deliveryTime: "20-25 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 6,
-//     name: "Rolled Oats - Quaker",
-//     category: "grains",
-//     price: 180,
-//     description: "Nutritious rolled oats - 1kg pack",
-//     icon: "🥣",
-//     rating: 4.4,
-//     deliveryTime: "15-20 mins",
-//     badge: "Healthy",
-//   },
-//   {
-//     id: 7,
-//     name: "Rolled Oats - Saffola",
-//     category: "grains",
-//     price: 150,
-//     description: "Instant oats - 1kg pack",
-//     icon: "🥣",
-//     rating: 3.9,
-//     deliveryTime: "15-20 mins",
-//     badge: "Quick",
-//   },
-//   {
-//     id: 8,
-//     name: "Poha - Indori Special",
-//     category: "grains",
-//     price: 45,
-//     description: "Flattened rice - 500g pack",
-//     icon: "🍚",
-//     rating: 4.0,
-//     deliveryTime: "15-20 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 9,
-//     name: "Poha - Local Brand",
-//     category: "grains",
-//     price: 40,
-//     description: "Budget poha - 500g pack",
-//     icon: "🍚",
-//     rating: 3.5,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 10,
-//     name: "Semolina (Rava) - MTR",
-//     category: "grains",
-//     price: 55,
-//     description: "Fine semolina - 1kg pack",
-//     icon: "🥣",
-//     rating: 4.1,
-//     deliveryTime: "15-20 mins",
-//     badge: "Fresh",
-//   },
-//   {
-//     id: 11,
-//     name: "Multigrain Bread - Britannia",
-//     category: "grains",
-//     price: 50,
-//     description: "Soft multigrain bread loaf",
-//     icon: "🍞",
-//     rating: 4.2,
-//     deliveryTime: "10-15 mins",
-//     badge: "Fresh",
-//   },
-//   {
-//     id: 12,
-//     name: "Brown Bread - Modern",
-//     category: "grains",
-//     price: 35,
-//     description: "Healthy brown bread loaf",
-//     icon: "🍞",
-//     rating: 3.7,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 13,
-//     name: "Pasta - Barilla",
-//     category: "grains",
-//     price: 90,
-//     description: "Durum wheat pasta - 500g pack",
-//     icon: "🍝",
-//     rating: 4.5,
-//     deliveryTime: "15-20 mins",
-//     badge: "Premium",
-//   },
-//   {
-//     id: 14,
-//     name: "Pasta - Local Brand",
-//     category: "grains",
-//     price: 60,
-//     description: "Budget pasta - 500g pack",
-//     icon: "🍝",
-//     rating: 3.3,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 15,
-//     name: "Noodles - Maggi",
-//     category: "grains",
-//     price: 55,
-//     description: "Instant masala noodles - 280g pack",
-//     icon: "🍜",
-//     rating: 4.6,
-//     deliveryTime: "10-15 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 16,
-//     name: "Noodles - Local Brand",
-//     category: "grains",
-//     price: 40,
-//     description: "Instant noodles - 200g pack",
-//     icon: "🍜",
-//     rating: 3.4,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 17,
-//     name: "Quinoa - Organic Harvest",
-//     category: "grains",
-//     price: 250,
-//     description: "White quinoa - 500g pack",
-//     icon: "🥗",
-//     rating: 4.4,
-//     deliveryTime: "20-25 mins",
-//     badge: "Premium",
-//   },
-//   {
-//     id: 18,
-//     name: "Cornflakes - Kellogg's",
-//     category: "grains",
-//     price: 120,
-//     description: "Crunchy cornflakes - 500g pack",
-//     icon: "🥣",
-//     rating: 4.3,
-//     deliveryTime: "10-15 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 19,
-//     name: "Cornflakes - Local Brand",
-//     category: "grains",
-//     price: 90,
-//     description: "Budget cornflakes - 500g pack",
-//     icon: "🥣",
-//     rating: 3.6,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 20,
-//     name: "Millet - Organic Barnyard",
-//     category: "grains",
-//     price: 140,
-//     description: "Organic millet - 1kg pack",
-//     icon: "🌾",
-//     rating: 4.1,
-//     deliveryTime: "20-25 mins",
-//     badge: "Healthy",
-//   },
+// Sample product data 
+// 🍚
+// 🌾
+// 🥣
+// 🍞
+// 🍝
+// 🍜
+// 🥗
+// 🥛
+// 🧈
+// 🥚
+// 🍎
+// 🍌
+// 🍅
+// 🥔
+// 🍿
+// 🍟
+// 🥤
+// 🧃
+// 🍪
+// 🥜
 
-//   // 🥛 Dairy & Poultry
-//   {
-//     id: 21,
-//     name: "Milk - Amul",
-//     category: "dairy",
-//     price: 60,
-//     description: "Fresh cow milk - 1 liter",
-//     icon: "🥛",
-//     rating: 4.5,
-//     deliveryTime: "10-15 mins",
-//     badge: "Pure",
-//   },
-//   {
-//     id: 22,
-//     name: "Milk - Local Dairy",
-//     category: "dairy",
-//     price: 50,
-//     description: "Toned milk - 1 liter",
-//     icon: "🥛",
-//     rating: 3.8,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 23,
-//     name: "Butter - Amul",
-//     category: "dairy",
-//     price: 80,
-//     description: "Creamy butter - 500g pack",
-//     icon: "🧈",
-//     rating: 4.6,
-//     deliveryTime: "15-20 mins",
-//     badge: "Creamy",
-//   },
-//   {
-//     id: 24,
-//     name: "Eggs - Farm Fresh",
-//     category: "poultry",
-//     price: 70,
-//     description: "12 fresh eggs pack",
-//     icon: "🥚",
-//     rating: 4.4,
-//     deliveryTime: "15-20 mins",
-//     badge: "Fresh",
-//   },
-//   {
-//     id: 25,
-//     name: "Eggs - Local Vendor",
-//     category: "poultry",
-//     price: 60,
-//     description: "12 eggs - local farm",
-//     icon: "🥚",
-//     rating: 3.7,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-
-//   // 🍎 Fruits & Veggies
-//   {
-//     id: 26,
-//     name: "Bananas",
-//     category: "fruits",
-//     price: 50,
-//     description: "Fresh bananas - 1 dozen",
-//     icon: "🍌",
-//     rating: 4.0,
-//     deliveryTime: "15-20 mins",
-//     badge: "Organic",
-//   },
-//   {
-//     id: 27,
-//     name: "Bananas - Local Vendor",
-//     category: "fruits",
-//     price: 40,
-//     description: "Budget bananas - 1 dozen",
-//     icon: "🍌",
-//     rating: 3.5,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 28,
-//     name: "Apples",
-//     category: "fruits",
-//     price: 150,
-//     description: "Kashmiri red apples - 1kg",
-//     icon: "🍎",
-//     rating: 4.5,
-//     deliveryTime: "15-20 mins",
-//     badge: "Premium",
-//   },
-//   {
-//     id: 29,
-//     name: "Tomatoes",
-//     category: "vegetables",
-//     price: 40,
-//     description: "Fresh tomatoes - 1kg",
-//     icon: "🍅",
-//     rating: 4.2,
-//     deliveryTime: "15-20 mins",
-//     badge: "Fresh",
-//   },
-//   {
-//     id: 30,
-//     name: "Tomatoes - Local Vendor",
-//     category: "vegetables",
-//     price: 35,
-//     description: "Budget tomatoes - 1kg",
-//     icon: "🍅",
-//     rating: 3.6,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 31,
-//     name: "Potatoes",
-//     category: "vegetables",
-//     price: 25,
-//     description: "Fresh potatoes - 1kg",
-//     icon: "🥔",
-//     rating: 4.1,
-//     deliveryTime: "15-20 mins",
-//     badge: "Fresh",
-//   },
-
-//   // 🍿 Snacks & Beverages
-//   {
-//     id: 32,
-//     name: "Chips - Lays",
-//     category: "snacks",
-//     price: 30,
-//     description: "Classic salted potato chips",
-//     icon: "🍟",
-//     rating: 4.3,
-//     deliveryTime: "10-15 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 33,
-//     name: "Chips - Local Brand",
-//     category: "snacks",
-//     price: 20,
-//     description: "Budget potato chips",
-//     icon: "🍟",
-//     rating: 3.2,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 34,
-//     name: "Coca Cola",
-//     category: "beverages",
-//     price: 40,
-//     description: "Chilled Coca Cola - 750ml",
-//     icon: "🥤",
-//     rating: 4.2,
-//     deliveryTime: "10-15 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 35,
-//     name: "Cola - Local Brand",
-//     category: "beverages",
-//     price: 25,
-//     description: "Local cola - 500ml",
-//     icon: "🥤",
-//     rating: 3.4,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 36,
-//     name: "Orange Juice",
-//     category: "beverages",
-//     price: 90,
-//     description: "Refreshing orange juice - 1 liter",
-//     icon: "🧃",
-//     rating: 4.5,
-//     deliveryTime: "15-20 mins",
-//     badge: "Fresh",
-//   },
-//   {
-//     id: 37,
-//     name: "Orange Juice - Local Vendor",
-//     category: "beverages",
-//     price: 70,
-//     description: "Fresh orange juice - 1 liter",
-//     icon: "🧃",
-//     rating: 3.7,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 38,
-//     name: "Chocolate Biscuits",
-//     category: "snacks",
-//     price: 45,
-//     description: "Delicious chocolate biscuits pack",
-//     icon: "🍪",
-//     rating: 4.5,
-//     deliveryTime: "10-15 mins",
-//     badge: "Popular",
-//   },
-//   {
-//     id: 39,
-//     name: "Biscuits - Local Vendor",
-//     category: "snacks",
-//     price: 30,
-//     description: "Simple glucose biscuits",
-//     icon: "🍪",
-//     rating: 3.6,
-//     deliveryTime: "10-15 mins",
-//     badge: "Budget",
-//   },
-//   {
-//     id: 40,
-//     name: "Peanuts",
-//     category: "snacks",
-//     price: 60,
-//     description: "Roasted peanuts - 500g pack",
-//     icon: "🥜",
-//     rating: 4.1,
-//     deliveryTime: "15-20 mins",
-//     badge: "Crunchy",
-//   },
-//   {
-//     id: 41,
-//     name: "Peanuts - Local Vendor",
-//     category: "snacks",
-//     price: 50,
-//     description: "Roasted peanuts - 500g",
-//     icon: "🥜",
-//     rating: 3.5,
-//     deliveryTime: "15-20 mins",
-//     badge: "Budget",
-//   },
-// ];
-
-// Tip: Replace any icon with a real pack-shot URL later (CDN/brand page).
-// The placeholder service below renders an image with the given text.
 const img = (text) =>
   `https://dummyimage.com/256x256/eeeeee/111111.png&text=${encodeURIComponent(text)}`;
 
@@ -1306,17 +864,27 @@ function createProductCard(product) {
 }
 
 function addToCart(productId) {
+  // Check login status
+  let isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn !== "true") {
+    alert("⚠️ Please login first to add items to your cart!");
+    window.location.href = "/signin"; // Django login page
+    return;
+  }
+
   const product = products.find((p) => p.id === productId);
   const existingItem = cart.find((item) => item.id === productId);
 
   if (existingItem) {
-    existingItem.quantity += 1;
+    existingItem.quantity++;
   } else {
     cart.push({ ...product, quantity: 1 });
   }
 
-  updateCartDisplay();
+  localStorage.setItem("cart", JSON.stringify(cart));
   displayProducts();
+  updateCartUI();
 }
 
 function increaseQuantity(productId) {
@@ -1383,6 +951,43 @@ function updateCartDisplay() {
   subtotal.textContent = `₹${total}`;
   totalAmount.textContent = `₹${total + (total > 0 ? 25 : 0)}`;
 }
+
+/* CHECKOUT BUTTON HANDLER */
+document.addEventListener("DOMContentLoaded", function () {
+  const checkoutBtn = document.querySelector(".checkout-btn");
+
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", function () {
+      let isLoggedIn = localStorage.getItem("isLoggedIn");
+
+      if (isLoggedIn === "true") {
+        // Calculate subtotal
+        let subtotal = calculateSubtotal();
+        let delivery = 25;
+        let total = subtotal + delivery;
+
+        alert(
+          `🎉 Order Placed Successfully!\n\nSubtotal: ₹${subtotal}\nDelivery: ₹${delivery}\nTotal: ₹${total}\n\nEstimated delivery: 20-30 minutes\n\nThis is a demo - in your Django app, this would process the actual payment and order!`
+        );
+
+        // Empty cart
+        cart = [];
+        localStorage.removeItem("cart");
+        displayProducts();
+        updateCartUI();
+      } else {
+        alert("⚠️ Please login first to place an order!");
+        window.location.href = "/signin"; // Django login page
+      }
+    });
+  }
+});
+
+/* HELPERS */
+function calculateSubtotal() {
+  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+}
+
 
 function filterCategory(category) {
   currentCategory = category;
