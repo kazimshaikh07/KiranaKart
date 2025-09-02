@@ -11,12 +11,13 @@ class Category(models.Model):
 class Product(models.Model):
     id = models.AutoField(primary_key=True)  # Auto-incrementing ID
     name = models.CharField(max_length=255)
-    category = models.CharField(max_length=100, null=True, blank=True, default="General")
-    price = models.FloatField()  # Matches products.json scaled prices (1-9)
-    description = models.TextField()
-    icon = models.URLField()  # For Unsplash URLs
-    rating = models.FloatField()
-    deliveryTime = models.CharField(max_length=50, default="2-3 days")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
+    price = models.DecimalField(max_digits=10, decimal_places=2)  # Use DecimalField for prices
+    description = models.CharField(max_length=255, default="No description")
+    # icon = models.URLField()  # For Unsplash URLs
+    icon = models.CharField(max_length=255, default="")
+    rating = models.FloatField(null=True, blank=True)
+    delivery_time = models.CharField(max_length=50, default="2-3 days")
     badge = models.CharField(max_length=100, null=True, blank=True, default="")
     stock = models.IntegerField(default=100)  # Added to support inventory
 
