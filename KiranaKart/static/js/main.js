@@ -44,7 +44,7 @@ const products = [
     "category": "grains",
     "price": 4.84,
     "description": "Premium long-grain basmati rice - 1kg pack",
-    "icon": "https://images.unsplash.com/photo-1586200950769-96a147e054e1",
+    "icon": "https://m.media-amazon.com/images/I/71xpepHmE8L._UF1000,1000_QL80_.jpg",
     "rating": 4.6,
     "deliveryTime": "20-25 mins",
     "badge": "Premium"
@@ -55,7 +55,7 @@ const products = [
     "category": "grains",
     "price": 5.16,
     "description": "Organic brown rice - 1kg pack",
-    "icon": "https://images.unsplash.com/photo-1599508704512-2f19efd3e061",
+    "icon": "https://m.media-amazon.com/images/I/61v88n1C0BL._UF1000,1000_QL80_.jpg",
     "rating": 4.2,
     "deliveryTime": "20-25 mins",
     "badge": "Organic"
@@ -66,7 +66,7 @@ const products = [
     "category": "grains",
     "price": 9.00,
     "description": "Whole wheat flour - 10kg pack",
-    "icon": "https://images.unsplash.com/photo-1628779237756-0a404247863b",
+    "icon": "https://www.bbassets.com/media/uploads/p/xl/126906_10-aashirvaad-atta-whole-wheat.jpg",
     "rating": 4.5,
     "deliveryTime": "20-25 mins",
     "badge": "Popular"
@@ -77,7 +77,7 @@ const products = [
     "category": "grains",
     "price": 6.96,
     "description": "Nutritious rolled oats - 1kg pack",
-    "icon": "https://images.unsplash.com/photo-1578403801937-3a7a6a3f0d7d",
+    "icon": "https://m.media-amazon.com/images/I/71d0wtpbxJL._UF1000,1000_QL80_.jpg",
     "rating": 4.4,
     "deliveryTime": "15-20 mins",
     "badge": "Healthy"
@@ -88,7 +88,7 @@ const products = [
     "category": "grains",
     "price": 2.11,
     "description": "Thin poha - 500g pack",
-    "icon": "https://images.unsplash.com/photo-1627308595250-2f46f19f7174",
+    "icon": "https://m.media-amazon.com/images/I/71-UdPrt2+S.jpg",
     "rating": 4.0,
     "deliveryTime": "15-20 mins",
     "badge": "Popular"
@@ -99,7 +99,7 @@ const products = [
     "category": "grains",
     "price": 2.49,
     "description": "Fine semolina - 1kg pack",
-    "icon": "https://images.unsplash.com/photo-1627308595323-1b8a46a4a3b0",
+    "icon": "https://shop.mtrfoods.com/cdn/shop/products/1_662f5af2-c3d1-4cf2-9b9c-fd158331988f_large.jpg?v=1742559617",
     "rating": 4.1,
     "deliveryTime": "15-20 mins",
     "badge": "Fresh"
@@ -110,7 +110,7 @@ const products = [
     "category": "grains",
     "price": 9.00,
     "description": "White quinoa - 500g pack",
-    "icon": "https://images.unsplash.com/photo-1589994329574-96a06b0f6b9e",
+    "icon": "https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/CIW/2024/7/9/2e4df251-4098-4a61-a598-f72765d8ea62_pulsesandothergrains_5ZTGLLCSGX_MN.jpg",
     "rating": 4.4,
     "deliveryTime": "20-25 mins",
     "badge": "Premium"
@@ -121,7 +121,7 @@ const products = [
     "category": "grains",
     "price": 2.49,
     "description": "Instant masala noodles - 280g",
-    "icon": "https://images.unsplash.com/photo-1612929633738-8f7c1e8085b0",
+    "icon": "https://5.imimg.com/data5/ECOM/Default/2023/9/346778213/KP/GM/LH/193735306/maggi-1689332805231-sku-1624-0-500x500.jpeg",
     "rating": 4.6,
     "deliveryTime": "10-15 mins",
     "badge": "Popular"
@@ -132,7 +132,7 @@ const products = [
     "category": "grains",
     "price": 4.84,
     "description": "Crunchy cornflakes - 500g pack",
-    "icon": "https://images.unsplash.com/photo-1599498687491-2e83c738b76a",
+    "icon": "https://images.apollo247.in/pub/media/catalog/product/K/E/KEL0087_1_2.jpg?tr=q-80,f-webp,w-400,dpr-3,c-at_max%201200w",
     "rating": 4.3,
     "deliveryTime": "10-15 mins",
     "badge": "Popular"
@@ -143,7 +143,7 @@ const products = [
     "category": "grains",
     "price": 2.87,
     "description": "Healthy broken wheat - 1kg pack",
-    "icon": "https://images.unsplash.com/photo-1600107363560-a0a7bee4b025",
+    "icon": "https://rukminim2.flixcart.com/image/704/844/xif0q/grain-millet/1/r/o/-original-imah9jpfjpyjgcjx.jpeg?q=90&crop=false",
     "rating": 4.0,
     "deliveryTime": "15-20 mins",
     "badge": "Healthy"
@@ -154,7 +154,7 @@ const products = [
     "category": "dairy",
     "price": 2.53,
     "description": "Fresh cow milk - 1 liter",
-    "icon": "https://images.unsplash.com/photo-1602434228300-a645b4f3689c",
+    "icon": "https://static.wixstatic.com/media/31a0fa_9b146efcd4b74c738c8795db339f0454~mv2.webp/v1/fill/w_980,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/31a0fa_9b146efcd4b74c738c8795db339f0454~mv2.webp",
     "rating": 4.5,
     "deliveryTime": "10-15 mins",
     "badge": "Pure"
@@ -165,7 +165,7 @@ const products = [
     "category": "dairy",
     "price": 2.11,
     "description": "Fresh dahi - 500g",
-    "icon": "https://images.unsplash.com/photo-1584270558482-b1b63c0dc433",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiYEexDjY42LGEWv_Ykyp7PnBmybrjPZO5RA&s",
     "rating": 4.2,
     "deliveryTime": "10-15 mins",
     "badge": "Fresh"
@@ -176,7 +176,7 @@ const products = [
     "category": "dairy",
     "price": 3.20,
     "description": "Creamy butter - 500g pack",
-    "icon": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc7d",
+    "icon": "https://cdn.grofers.com/da/cms-assets/cms/product/eab5685e-e52e-457e-8536-e04ce0a46b04.jpg",
     "rating": 4.6,
     "deliveryTime": "15-20 mins",
     "badge": "Creamy"
@@ -187,7 +187,7 @@ const products = [
     "category": "poultry",
     "price": 2.87,
     "description": "Pack of 12 eggs",
-    "icon": "https://images.unsplash.com/photo-1518562555075-7c91af6c8c39",
+    "icon": "https://www.licious.in/blog/wp-content/uploads/2022/01/eggs-1.jpg",
     "rating": 4.4,
     "deliveryTime": "15-20 mins",
     "badge": "Fresh"
@@ -198,7 +198,7 @@ const products = [
     "category": "fruits",
     "price": 2.49,
     "description": "Fresh bananas - 1 dozen",
-    "icon": "https://images.unsplash.com/photo-1603833665858-e61d17a0f0c9",
+    "icon": "https://m.media-amazon.com/images/I/51ebZJ+DR4L._UF1000,1000_QL80_.jpg",
     "rating": 4.0,
     "deliveryTime": "15-20 mins",
     "badge": "Organic"
@@ -220,7 +220,7 @@ const products = [
     "category": "vegetables",
     "price": 1.96,
     "description": "Fresh tomatoes - 1kg",
-    "icon": "https://images.unsplash.com/photo-1592928302638-84a9f7fb0d11",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJa6G2sFzRt2c_4DljZUMKfK8sMOFV-E8F_A&s",
     "rating": 4.2,
     "deliveryTime": "15-20 mins",
     "badge": "Fresh"
@@ -242,7 +242,7 @@ const products = [
     "category": "snacks",
     "price": 1.67,
     "description": "Classic salted potato chips",
-    "icon": "https://images.unsplash.com/photo-1615497001839-b0a68a07e2d6",
+    "icon": "https://ik.imagekit.io/wlfr/wellness/images/products/372460-1.jpg/tr:w-3840,c-at_max,cm-pad_resize,ar-1210-700,pr-true,f-auto,q-70,l-image,i-Wellness_logo_BDwqbQao9.png,lfo-bottom_right,w-200,h-90,c-at_least,cm-pad_resize,l-end",
     "rating": 4.3,
     "deliveryTime": "10-15 mins",
     "badge": "Popular"
@@ -253,7 +253,7 @@ const products = [
     "category": "snacks",
     "price": 2.11,
     "description": "Chocolate cream biscuits",
-    "icon": "https://images.unsplash.com/photo-1606890737304-57d14433e2a6",
+    "icon": "https://m.media-amazon.com/images/I/61Xph7Wux9L.jpg",
     "rating": 4.5,
     "deliveryTime": "10-15 mins",
     "badge": "Popular"
@@ -264,7 +264,7 @@ const products = [
     "category": "beverages",
     "price": 1.96,
     "description": "Chilled Coca-Cola - 750ml",
-    "icon": "https://images.unsplash.com/photo-1622483767028-3f66f32f7de7",
+    "icon": "https://m.media-amazon.com/images/I/91n6v6KY-6L._AC_SL1500_.jpg",
     "rating": 4.2,
     "deliveryTime": "10-15 mins",
     "badge": "Popular"
@@ -275,7 +275,7 @@ const products = [
     "category": "beverages",
     "price": 3.56,
     "description": "Refreshing orange juice - 1 liter",
-    "icon": "https://images.unsplash.com/photo-1600271886742-f049b37d44c9",
+    "icon": "https://www.coca-cola.com/content/dam/onexp/us/en/brands/simply/orange-/packshots/simply-orange-high-pulp.png",
     "rating": 4.5,
     "deliveryTime": "15-20 mins",
     "badge": "Fresh"
@@ -286,7 +286,7 @@ const products = [
     "category": "pulses",
     "price": 5.49,
     "description": "Arhar dal - 1kg",
-    "icon": "https://images.unsplash.com/photo-1600166898405-da8d7d9a5b57",
+    "icon": "https://cdn.shopaccino.com/edible-smart/products/toor-dal-min-scaled-740285_l.jpg?v=587",
     "rating": 4.2,
     "deliveryTime": "20-25 mins",
     "badge": "Protein"
@@ -297,7 +297,7 @@ const products = [
     "category": "pulses",
     "price": 5.16,
     "description": "Split moong dal - 1kg",
-    "icon": "https://images.unsplash.com/photo-1627308595322-4c9036e6b2b1",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3fhjfG16vqu9CzSVAuuC6wwZa0MjwBl6zfA&s",
     "rating": 3.9,
     "deliveryTime": "20-25 mins",
     "badge": "Light"
