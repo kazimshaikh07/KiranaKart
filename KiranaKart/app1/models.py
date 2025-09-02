@@ -14,7 +14,6 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     price = models.DecimalField(max_digits=10, decimal_places=2)  # Use DecimalField for prices
     description = models.CharField(max_length=255, default="No description")
-    # icon = models.URLField()  # For Unsplash URLs
     icon = models.CharField(max_length=255, default="")
     rating = models.FloatField(null=True, blank=True)
     delivery_time = models.CharField(max_length=50, default="2-3 days")
