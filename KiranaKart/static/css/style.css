@@ -670,6 +670,26 @@ body {
   margin: 0;
 }
 
+.checkout-details {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+}
+.checkout-details label {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.checkout-details select,
+.checkout-details input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
 /*RESPONSIVE DESIGN STYLES*/
 /* @media (max-width: 768px) {
   .header-container {

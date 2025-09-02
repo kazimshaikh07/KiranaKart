@@ -25,5 +25,5 @@ admin.site.index_title = "Welcome to KIRANAEXPRESS Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app1.urls')),  # 👈 include app1.urls only once
+    path('', include('app1.urls')),  # app1.urls
 ]
