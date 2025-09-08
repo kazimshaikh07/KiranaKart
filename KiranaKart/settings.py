@@ -25,13 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qfjui*8xy3-!h(_f!op+53)pq!ocri@nrl%n@&albk(v_gncx1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-if DEBUG:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-else:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
-    CSRF_TRUSTED_ORIGINS = ['https://' + host for host in ALLOWED_HOSTS if host]
+ALLOWED_HOSTS = ["*"]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 USE_X_FORWARDED_HOST = True
