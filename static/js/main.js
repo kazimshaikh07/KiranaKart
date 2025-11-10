@@ -458,21 +458,6 @@ function updateCartDisplay() {
   totalAmount.textContent = `₹${total + (total > 0 ? 25 : 0)}`;
 }
 
-/* CHECKOUT BUTTON HANDLER */
-document.querySelector(".checkout-btn").addEventListener("click", function () {
-  if (!isLoggedIn) {
-    alert("⚠️ Please login first to place an order!");
-    window.location.href = "/signin/";
-  } else {
-    let subtotal = 500; // example value, replace with your calculation
-    let total = subtotal + 25;
-
-    alert(
-      `🎉 Order Placed Successfully!\n\nSubtotal: ₹${subtotal}\nDelivery: ₹25\nTotal: ₹${total}\n\nEstimated delivery: 20-30 minutes\n\nThis is a demo - in your Django app, this would process the actual payment and order!`
-    );
-  }
-});
-
 /* HELPERS */
 function calculateSubtotal() {
   return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -536,14 +521,13 @@ function checkout() {
   const total = subtotal + 25;
 
   alert(
-    `🎉 Order Placed Successfully!\n\nSubtotal: ₹${subtotal}\nDelivery: ₹25\nTotal: ₹${total}\n\nEstimated delivery: 20-30 minutes\n\nThis is a demo - in your Django app, this would process the actual payment and order!`
+    `Thanks for your order! Your order has been placed successfully.\n\nThis is a demo project created using the Django framework.`
   );
 
   // clear the cart after placing order
-  document.getElementById("cartItems").innerHTML = "";
-  document.getElementById("subtotal").innerText = "₹0";
-  document.getElementById("totalAmount").innerText = "₹25";
-  document.getElementById("cartCount").innerText = "0";
+  cart = [];
+  updateCartDisplay();
+  displayProducts();
 }
 
 // Filter tabs functionality
