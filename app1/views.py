@@ -1,21 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.contrib.auth import logout
 
 
-# Create your views here.
 def home(request):
     return render(request, 'base.html')
 
-# header section views
-def signin(request):
-    return render(request, 'signin.html')
-# singin & signup section views
-def signin_view(request):
-    return render(request, 'signin.html')
+
 def signup_view(request):
     return render(request, 'signup.html')
 
