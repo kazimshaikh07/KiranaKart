@@ -483,6 +483,9 @@ function filterCategory(category) {
 function setupSearch() {
   const heroSearch = document.getElementById("heroSearch");
   const navSearch = document.getElementById("navSearch");
+  const heroSection = document.getElementById("heroSection");
+  const categoriesSection = document.getElementById("categoriesSection");
+  const noResults = document.getElementById("noResults");
   
   function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
@@ -491,6 +494,23 @@ function setupSearch() {
         product.name.toLowerCase().includes(searchTerm) ||
         product.description.toLowerCase().includes(searchTerm)
     );
+    
+    // Only hide sections if there's a search term
+    if (searchTerm) {
+      if (heroSection) heroSection.style.display = "none";
+      if (categoriesSection) categoriesSection.style.display = "none";
+      
+      // Show no results message if needed
+      if (noResults) {
+        noResults.style.display = filteredProducts.length === 0 ? "block" : "none";
+      }
+    } else {
+      // Show sections when search is cleared
+      if (heroSection) heroSection.style.display = "block";
+      if (categoriesSection) categoriesSection.style.display = "block";
+      if (noResults) noResults.style.display = "none";
+    }
+    
     displayProducts(filteredProducts);
   }
 
