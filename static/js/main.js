@@ -481,16 +481,32 @@ function filterCategory(category) {
 }
 
 function setupSearch() {
-  const searchInput = document.getElementById("heroSearch");
-  searchInput.addEventListener("input", function () {
-    const searchTerm = this.value.toLowerCase();
+  const heroSearch = document.getElementById("heroSearch");
+  const navSearch = document.getElementById("navSearch");
+  
+  function handleSearch(event) {
+    const searchTerm = event.target.value.toLowerCase();
     const filteredProducts = products.filter(
       (product) =>
         product.name.toLowerCase().includes(searchTerm) ||
         product.description.toLowerCase().includes(searchTerm)
     );
     displayProducts(filteredProducts);
-  });
+  }
+
+  // Add event listeners to both search inputs
+  if (heroSearch) heroSearch.addEventListener("input", handleSearch);
+  if (navSearch) navSearch.addEventListener("input", handleSearch);
+  }
+
+  function toggleSearch() {
+    const searchInput = document.getElementById("navSearch");
+    if (searchInput.classList.contains("d-none")) {
+      searchInput.classList.remove("d-none");
+      searchInput.focus();
+    } else {
+      searchInput.classList.add("d-none");
+    }
 }
 
 function toggleCart() {

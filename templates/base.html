@@ -46,14 +46,20 @@
 
         <!-- Navigation -->
         <nav class="nav-items d-flex">
-          <button>
-            <a href="#">
-              <div class="nav-item d-flex flex-column align-items-center mx-3">
+          <div class="nav-item d-flex align-items-center mx-3">
+            <div class="search-container d-flex">
+              <input
+                type="text"
+                class="search-input form-control"
+                placeholder="Search for groceries..."
+                id="navSearch"
+                style="width: 200px;"
+              />
+              <button class="search-btn btn btn-primary ms-2">
                 <span>🔍</span>
-                <span>Search</span>
-              </div>
-            </a>
-          </button>
+              </button>
+            </div>
+          </div>
 
           <button>
             <a href="{% url 'help' %}">
@@ -114,7 +120,7 @@
           Order from your favorite local kirana store and get fresh groceries
           delivered to your doorstep
         </p>
-        <div class="search-container">
+        <!-- <div class="search-container">
           <input
             type="text"
             class="search-input"
@@ -122,7 +128,7 @@
             id="heroSearch"
           />
           <button class="search-btn">Search</button>
-        </div>
+        </div> -->
       </div>
     </section>
 

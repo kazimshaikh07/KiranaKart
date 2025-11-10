@@ -72,6 +72,60 @@ body {
   padding: 0;
 }
 
+/* NAVBAR REFINEMENTS: make navbar look more polished while keeping class names */
+.nav-items {
+  gap: 18px; /* slightly tighter spacing */
+}
+.nav-items .nav-item {
+  background: transparent; /* neutral background by default */
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background 0.18s ease, transform 0.12s ease, color 0.18s ease;
+  color: #333;
+}
+.nav-items .nav-item:hover {
+  background: rgba(252, 128, 25, 0.08); /* subtle warm hover */
+  transform: translateY(-2px);
+  color: #fc8019;
+}
+.nav-items .nav-item span,
+.nav-items .nav-item a {
+  color: inherit;
+}
+
+/* Search in navbar: compact, subtle border and focus expansion */
+.nav-items .search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-items .search-container .search-input {
+  width: 200px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: width 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  font-size: 14px;
+}
+.nav-items .search-container .search-input:focus {
+  width: 260px;
+  outline: none;
+  border-color: rgba(252,128,25,0.9);
+  box-shadow: 0 8px 30px rgba(252,128,25,0.08);
+}
+.nav-items .search-container .search-btn {
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+/* Make cart button consistent with refined nav items */
+.nav-items .cart-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
 .nav-items button a {
   text-decoration: none;
   color: inherit;
@@ -104,18 +158,27 @@ body {
 
 .cart-count {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background: #fff;
-  color: #fc8019;
+  top: -6px;
+  right: -6px;
+  /* Force visible badge colors in case Bootstrap utility classes conflict */
+  background: #fff !important;
+  color: #fc8019 !important;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
+  border: 2px solid rgba(252,128,25,0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* Extra specificity to override Bootstrap utility classes when applied */
+.nav-items .cart-btn .cart-count {
+  background: #fff !important;
+  color: #fc8019 !important;
 }
 
 /* HERO SECTION STYLES*/
