@@ -84,7 +84,7 @@ const products = [
   },
   {
     "id": 5,
-    "name": "Poha (Flattened Rice) - Indori Special 500g",
+    "name": "Poha (Flattened Rice) 500g",
     "category": "grains",
     "price": 2.11,
     "description": "Thin poha - 500g pack",
