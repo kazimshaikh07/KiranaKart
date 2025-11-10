@@ -390,7 +390,6 @@ function addToCart(productId) {
 
   updateCartDisplay(); // ✅ update navbar + cart sidebar immediately
   displayProducts();   // refresh UI if needed
-  alert(`🛒 ${product.name} added to your cart!`);
 }
 
 function increaseQuantity(productId) {
