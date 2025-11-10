@@ -113,7 +113,7 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="heroSection">
       <div class="hero-content">
         <h1>Fresh Groceries Delivered</h1>
         <p>
@@ -133,7 +133,7 @@
     </section>
 
     <!-- CATEGORIES SECTION -->
-    <section class="categories-section">
+    <section class="categories-section" id="categoriesSection">
       <div class="container">
         <h2 class="section-title">Shop by Category</h2>
         <div class="categories-grid">
@@ -178,10 +178,10 @@
     </section>
 
     <!-- PRODUCTS SECTION -->
-    <section class="products-section">
+    <section class="products-section" id="productsSection">
       <div class="container">
         <div class="products-header">
-          <h2 class="section-title">Fresh Products</h2>
+          <h2 class="section-title" id="productsTitle">Fresh Products</h2>
           <!-- <div class="filter-tabs">
                     <div class="filter-tab active">Popular</div>
                     <div class="filter-tab">Rating 4.0+</div>
@@ -191,6 +191,10 @@
         </div>
         <div class="products-grid" id="productsGrid">
           <!-- Products will be loaded here -->
+        </div>
+        <div id="noResults" style="display: none; text-align: center; padding: 40px;">
+          <h3>No products found</h3>
+          <p>Try searching with different keywords</p>
         </div>
       </div>
     </section>
