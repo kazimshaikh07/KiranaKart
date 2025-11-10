@@ -111,3 +111,15 @@ def genie(request):
     return render(request, 'genie.html')
 
 
+def f_common(request):
+    """Render the common/coming-soon page (templates/F_common.html).
+
+    The footer links point here for Help & Support, Partner with us, Ride with us,
+    Terms & Conditions, Cookie Policy, Privacy Policy and Investor Relations.
+    """
+    return render(request, 'F_common.html')
+
+def help_support(request):
+    return render(request, 'help_support.html')
+
+

@@ -23,4 +23,6 @@ urlpatterns = [
 
     # instamart line
     path('genie/', views.genie, name='genie'),
+    path('help-support/', views.help_support, name='help_support'),
+    path('f_common/', views.f_common, name='f_common'),
 ]
